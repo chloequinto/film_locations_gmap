@@ -1,0 +1,151 @@
+/* html body */
+body {
+	margin: 0;
+	padding: 0;
+	background-color: white;
+}
+
+/* the div that holds the google map element*/
+#map {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 270px;
+	bottom: 0px;
+	overflow: hidden;
+}
+
+/* class that makes data 50% visible */
+.data_visible {
+	opacity: .5;
+}
+
+/* class that hides data */
+.data_hidden {
+	display: none;
+}
+
+#overlay {
+	pointer-events: none;
+}
+
+#legendsvg {
+	height: 35px;
+	width: 250px;
+	overflow: hidden;
+}
+
+/* customize the horizontal rule tag */
+hr {
+	border: 0;
+	border-bottom: 1px solid white;
+}
+
+/* div that holds all of the various texts on the right */
+#texts {
+	position: absolute;
+	right: 0px;
+	width: 249px;
+    top: 0px;
+    bottom: 0px;
+	padding: 10px;
+	font-size: 12pt;
+	background-color: gray;
+	border-left: 1px solid white;
+	color: white;
+	font-family: sans-serif;
+
+}
+
+#title {
+	font-size: 40pt;
+	font-family: sans-serif;
+	color: white;
+}
+
+#author {
+	font-size: 10pt;
+	font-style: italic;
+	letter-spacing: 1px;
+	font-family: sans-serif;
+	color: white;
+
+}
+
+/* text for the legend */
+#legend .label {
+    font-size: 10pt;
+	pointer-events: none; /* ignore mouse clicks */
+	font-family: sans-serif;
+	color: white;
+}
+
+
+/* default circle settings */
+circle {
+	/* fill-opacity: .8; */
+	stroke: white;
+	stroke-width: 1;
+
+}
+
+/* this makes it so that whenever it zooms in, the strokes will not also scale as well */
+path,circle {
+    vector-effect: non-scaling-stroke;
+}
+
+/* text caption labels */
+.label {
+	opacity: .4;
+	font-size: 14pt;
+	pointer-events: none; /* ignore mouse clicks */
+}
+.label_point {
+	stroke: none;
+	pointer-events: none; /* ignore mouse clicks */
+}
+
+
+/* applied to data when mouse is over */
+.highlight {
+    stroke-width: 4px;
+    opacity: 1.0;
+		stroke: orange;
+}
+
+/* a nifty little CSS animation that makes a big stroke become normal again */
+.selected {
+    stroke: orange;
+    animation: selectanim 200ms ease;
+    stroke-width: 8px;
+}
+@keyframes selectanim {
+  from { stroke-width: 500px; }
+  to { stroke-width: 4px; }
+}
+
+/* caption for the tooltip */
+#tooltip {
+	margin-top: 1em;
+	font-size: 10pt;
+}
+
+/* the little control that lets you "look up" data */
+#dataLocator {
+	width: 250px; /*select controls often need explicit widths set or they can get too big*/
+}
+
+/* the svg element that will hold the data needs to be transparent */
+svg {
+	background-color: transparent;
+}
+
+
+.dot {
+	pointer-events: auto;
+}
+
+svg.data {
+	position: absolute;
+	overflow: visible;
+}
